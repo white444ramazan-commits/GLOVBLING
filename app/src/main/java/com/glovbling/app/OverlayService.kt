@@ -88,8 +88,10 @@ class OverlayService : Service() {
         }
         val titles = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL }
         titles.addView(label("GLOVBLING", 18f, Color.WHITE, true))
-        globalBadge = label("ROOT SESSION  •  GLOBAL", 9f, 0xFF9AA5CF.toInt(), true)
-        titles.addView(globalBadge, wrap().apply { topMargin = dp(3) })
+        rootBadge = label("ROOT ACCESS  •  VERIFIED", 9f, 0xFF75EFB7.toInt(), true)
+        titles.addView(rootBadge, wrap().apply { topMargin = dp(3) })
+        globalBadge = label("GLOBAL  •  com.tencent.ig", 9f, 0xFF9AA5CF.toInt(), true)
+        titles.addView(globalBadge, wrap().apply { topMargin = dp(2) })
         header.addView(titles, LinearLayout.LayoutParams(0, -2, 1f))
         header.addView(label("–", 24f, Color.WHITE, true).apply {
             gravity = Gravity.CENTER
